@@ -8,6 +8,7 @@
 - **github.com/sirupsen/logrus**: [logrusr](https://github.com/bombsimon/logrusr)
 - **go.uber.org/zap**: [zapr](https://github.com/go-logr/zapr)
 - **github.com/rs/zerolog**: [zerologr](https://github.com/go-logr/zerologr)
+- **k8s.io/klog/v2**: [klogr](https://github.com/kubernetes/klog/tree/main/klogr)
 
 ## Benchmark
 
