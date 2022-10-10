@@ -33,6 +33,7 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/sirupsen/logrus"
 	"go.uber.org/zap"
+	"k8s.io/klog/v2/klogr"
 )
 
 func init() {
@@ -40,7 +41,7 @@ func init() {
 
 	// stdr
 	stdr.SetVerbosity(1)
-	// globr
+	// glogr / klogr
 	flag.Set("v", "1")
 	flag.Set("logtostderr", "true")
 	// zerologr
@@ -445,5 +446,47 @@ func BenchmarkZerologrWithName(b *testing.B) {
 
 func BenchmarkZerologrWithCallDepth(b *testing.B) {
 	var log logr.Logger = zerologrLogger()
+	doWithCallDepth(b, log)
+}
+
+// klog
+
+func BenchmarkKlogrInfoOneArg(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doInfoOneArg(b, log)
+}
+
+func BenchmarkKlogrInfoSeveralArgs(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doInfoSeveralArgs(b, log)
+}
+
+func BenchmarkKlogrV0Info(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doV0Info(b, log)
+}
+
+func BenchmarkKlogrV9Info(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doV9Info(b, log)
+}
+
+func BenchmarkKlogrError(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doError(b, log)
+}
+
+func BenchmarkKlogrWithValues(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doWithValues(b, log)
+}
+
+func BenchmarkKlogrWithName(b *testing.B) {
+	var log logr.Logger = klogr.New()
+	doWithName(b, log)
+}
+
+func BenchmarkKlogrWithCallDepth(b *testing.B) {
+	var log logr.Logger = klogr.New()
 	doWithCallDepth(b, log)
 }

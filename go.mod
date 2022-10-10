@@ -19,4 +19,5 @@ require (
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e // indirect
+	k8s.io/klog/v2 v2.80.1 // indirect
 )
