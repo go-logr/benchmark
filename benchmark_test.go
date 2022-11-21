@@ -40,7 +40,7 @@ func init() {
 
 	// stdr
 	stdr.SetVerbosity(1)
-	// globr
+	// glogr
 	flag.Set("v", "1")
 	flag.Set("logtostderr", "true")
 	// zerologr
