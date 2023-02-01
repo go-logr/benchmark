@@ -23,7 +23,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/bombsimon/logrusr/v2"
+	"github.com/bombsimon/logrusr/v4"
 	"github.com/go-logr/glogr"
 	"github.com/go-logr/logr"
 	"github.com/go-logr/logr/funcr"
